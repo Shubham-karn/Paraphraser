@@ -6,7 +6,7 @@ services:
       - .:/paraphraser
     image: app
     container_name: paraphraser_container
-    command: uvicorn test:app --host 0.0.0.0 --port 8000
+    command: uvicorn test:app --workers 4 --host 0.0.0.0 --port 8000
 
   nginx:
     image: nginx:latest

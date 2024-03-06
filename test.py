@@ -9,5 +9,5 @@ parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5")
 
 @app.get("/paraphrase/")
 async def read_paraphrase(phrase: str):
-    para_phrases = parrot.augment(input_phrase=phrase, use_gpu=False, max_return_phrases = 10)
+    para_phrases = parrot.augment(input_phrase=phrase, use_gpu=False, max_return_phrases=5)
     return {"paraphrases": para_phrases}
